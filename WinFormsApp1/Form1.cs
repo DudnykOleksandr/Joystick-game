@@ -146,5 +146,15 @@ namespace WinFormsApp1
             // Draw the center point. To draw it as a small circle:
             g.FillEllipse(centerBrush, (float)convertedCoordinates.Item1, (float)convertedCoordinates.Item2, centerSize, centerSize);
         }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

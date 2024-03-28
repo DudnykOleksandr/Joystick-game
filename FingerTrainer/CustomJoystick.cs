@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WinFormsApp1
+﻿namespace FingerTrainer
 {
     public class CustomJoystick
     {
@@ -17,20 +11,31 @@ namespace WinFormsApp1
         private double normalizedX;
         private double normalizedY;
 
-        public void UpdateValues(int x, int y)
+        private int lastXValue = 0;
+        private int lastYValue = 0;
+
+        public bool UpdateValues(int x, int y)
         {
+            if(lastXValue==x && lastYValue == y)
+            {
+                return false;
+            }
+
+            lastXValue = x;
+            lastYValue = y;
+
             var middleX = (maxValueX - minValueX) / 2;
             normalizedX = (double)(x - middleX) / middleX;
 
             var middleY = (maxValueY - minValueY) / 2;
             normalizedY = (double)(y - middleY) / middleY;
+
+            return true;
         }
 
         public Tuple<double, double> GetNormalizedValues()
         {
             return new Tuple<double, double>(normalizedX, normalizedY);
         }
-
-
     }
 }

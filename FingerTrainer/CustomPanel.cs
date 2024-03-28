@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace FingerTrainer
 {
-    public class myPanel : Panel
+    public class CustomPanel : Panel
     {
-        public myPanel() : base()
+        public CustomPanel() : base()
         {
             this.DoubleBuffered = true;
         }
